@@ -2,7 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'orbitron', sans-serif;
 }
 
 body {
@@ -44,7 +44,7 @@ nav a:hover {
 /* Hero Section */
 .hero {
     height: 100vh;
-    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('/api/placeholder/1920/1080');
+    background-image: url(./bg.avif);
     background-size: cover;
     display: flex;
     flex-direction: column;
@@ -57,13 +57,17 @@ nav a:hover {
 .hero h1 {
     font-size: 3.5rem;
     margin-bottom: 2rem;
-    background: linear-gradient(45deg, #00ff9d, #00b8ff);
+    color: #adffe0;
+    padding: 1rem 1rem;
+    border: none;
+    border-radius: 10px;
+    background-color: #00000077;
 }
 
 .cta-button {
     padding: 1rem 2rem;
     font-size: 1.2rem;
-    background: linear-gradient(45deg, #00ff9d, #00b8ff);
+    background-color: #00ff9d;
     border: none;
     border-radius: 5px;
     color: #0a0a0a;
