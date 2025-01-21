@@ -1,130 +1,246 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap');
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'orbitron', sans-serif;
+    font-family: 'Open Sans', sans-serif;
 }
 
 body {
     background-color: #0a0a0a;
     color: #ffffff;
+    overflow-x: hidden;
+    margin: 0;
 }
 
-/* Header Styles */
+/* Header with Glassmorphism */
+/* Adjusted Header */
+/* Adjusted Header */
+/* Adjusted Header */
 header {
     position: fixed;
-    top: 0;
-    width: 100%;
-    background: rgba(10, 10, 10, 0.95);
-    padding: 1rem 4rem;
+    top: 1.2rem; /* Moves the navigation slightly lower */
+    left: 50%; /* Centers horizontally */
+    transform: translateX(-50%); /* Ensures proper centering */
+    width: 97%; /* Sets the width to 90% */
+    padding: 1rem 2rem; /* Adds inner padding for spacing */
     display: flex;
     justify-content: space-between;
     align-items: center;
     z-index: 1000;
-    border-bottom: 1px solid #00ff9d;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px); /* Safari compatibility */
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
 
 .logo {
     font-size: 1.5rem;
     font-weight: 700;
-    color: #00ff9d;
+    color: #ffffff;
 }
 
 nav a {
     color: #ffffff;
     text-decoration: none;
     margin-left: 2rem;
-    transition: color 0.3s ease;
+    transition: color 0.3s ease, transform 0.2s ease;
 }
 
 nav a:hover {
     color: #00ff9d;
+    transform: scale(1.1);
 }
 
 /* Hero Section */
 .hero {
     height: 100vh;
-    background-image: url(./bg.avif);
-    background-size: cover;
+    position: relative;
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
-    padding: 0 2rem;
+    overflow: hidden;
 }
 
-.hero h1 {
+/* Spline Background */
+.spline-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    pointer-events: none;
+    transform: scale(1.25); /* Zoom by 25% */
+}
+
+.spline-bg {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+/* Hero Content */
+.hero-content {
+    position: relative;
+    z-index: 1;
+    padding: 1rem 2rem;
+}
+
+.hero-content h1 {
     font-size: 3.5rem;
     margin-bottom: 2rem;
-    color: #adffe0;
-    padding: 1rem 1rem;
-    border: none;
-    border-radius: 10px;
-    background-color: #00000077;
+    color: #ffffff;
+    text-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+    max-width: 900px;
+    line-height: 1.4;
 }
 
 .cta-button {
     padding: 1rem 2rem;
     font-size: 1.2rem;
-    background-color: #00ff9d;
-    border: none;
-    border-radius: 5px;
-    color: #0a0a0a;
+    color: #ffffff;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
     cursor: pointer;
-    transition: transform 0.3s ease;
+    transition: transform 0.3s ease, background-color 0.3s ease;
 }
 
 .cta-button:hover {
     transform: scale(1.05);
+    background: rgba(255, 255, 255, 0.2);
 }
 
-/* About Section */
+/* Fullscreen About Section with Glassmorphism and Spline Background */
 .about {
-    padding: 6rem 4rem;
-    background: #0f0f0f;
+    position: relative;
+    padding: 0; /* Remove padding to make it truly fullscreen */
+    height: 100vh; /* Set height to full viewport height */
+    background: rgba(10, 10, 10, 0.6); /* Semi-transparent black for glassmorphism effect */
+    color: #ffffff;
+    text-align: center;
+    overflow: hidden;
+    backdrop-filter: blur(15px); /* Glassmorphism effect */
+    border-radius: 10px; /* Optional: Adds rounded corners */
+    border: 1px solid rgba(255, 255, 255, 0.1); /* Light border for a polished look */
 }
 
-.section-title {
-    font-size: 2.5rem;
-    margin-bottom: 2rem;
-    color: #00ff9d;
+.spline-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; /* Ensures background is behind content */
+    pointer-events: none; /* Prevents interaction with the background */
 }
 
+.spline-bg {
+    width: 100%;
+    height: 100%;
+    border: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
 /* Services Section */
 .services {
     padding: 6rem 4rem;
     background: #0a0a0a;
+    text-align: center;
+}
+
+.services .section-title {
+    font-size: 3rem;
+    margin-bottom: 3rem;
+    color: #00ff9d;
 }
 
 .services-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2rem;
-    margin-top: 3rem;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 3rem;
+    justify-items: center;
 }
 
+/* Service Card */
 .service-card {
-    background: #0f0f0f;
-    padding: 2rem;
-    border-radius: 10px;
-    border: 1px solid #00ff9d;
-    transition: transform 0.3s ease;
+    position: relative;
+    background: rgba(10, 10, 10, 0.7);
+    backdrop-filter: blur(15px);
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    width: 350px;
+    height: 450px;
+    overflow: hidden;
+    text-align: center;
+    padding: 1rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
+/* Hover Effect */
 .service-card:hover {
     transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
 }
 
-.service-card h3 {
-    color: #00b8ff;
+/* Card Content */
+.card-content {
+    position: relative;
+    z-index: 2; /* Ensures text is on top */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    padding: 1rem;
+    color: #ffffff;
+}
+
+.card-content h3 {
+    font-size: 1.8rem;
+    color: #00ff9d;
     margin-bottom: 1rem;
 }
+
+.card-content p {
+    font-size: 1rem;
+    color: #d4d4d4;
+    line-height: 1.6;
+}
+
+/* Spline Iframe */
+.card-spline {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1; /* Places the video behind the text */
+    opacity: 0; /* Hidden by default */
+    pointer-events: none; /* Prevents interaction when hidden */
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+/* Show Spline on Hover */
+.service-card:hover .card-spline {
+    opacity: 1; /* Makes the Spline visible */
+    pointer-events: auto; /* Allows interaction */
+    transform: scale(1.05); /* Adds a slight zoom */
+}
+
 
 /* Contact Section */
 .contact {
     padding: 6rem 4rem;
     background: #0f0f0f;
+    text-align: center;
 }
 
 .contact-form {
@@ -140,10 +256,32 @@ nav a:hover {
 .form-group textarea {
     width: 100%;
     padding: 1rem;
-    background: #0a0a0a;
-    border: 1px solid #00ff9d;
+    background: rgba(10, 10, 10, 0.6);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
     color: #ffffff;
     border-radius: 5px;
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    color: #cccccc;
+}
+
+button.cta-button {
+    background: rgba(255, 255, 255, 0.1);
+    color: #ffffff;
+    font-size: 1.2rem;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+    padding: 1rem 2rem;
+    cursor: pointer;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+button.cta-button:hover {
+    transform: scale(1.05);
+    background: rgba(255, 255, 255, 0.2);
 }
 
 /* Footer */
@@ -151,5 +289,6 @@ footer {
     padding: 2rem 4rem;
     background: #0a0a0a;
     text-align: center;
+    color: #d4d4d4;
     border-top: 1px solid #00ff9d;
 }
