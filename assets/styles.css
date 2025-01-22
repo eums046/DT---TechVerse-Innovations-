@@ -126,6 +126,7 @@ nav a.active {
 .cta-button {
     padding: 1rem 2rem;
     font-size: 1.2rem;
+    text-decoration: none;
     color: #ffffff;
     background: rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(10px);
