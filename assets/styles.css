@@ -33,6 +33,10 @@ header {
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
 
+body {
+    padding-top: 70px; /* Adjust based on header height */
+  }
+
 .logo {
     display: flex;
     align-items: center;
@@ -43,9 +47,15 @@ header {
     height: auto;
     object-fit: contain; /* Ensures the image scales proportionally */
   }
+  
 
   .logo {
     margin-right: 20px; /* Adjust as needed */
+  }
+
+  .logo img {
+    max-width: 100%;
+    height: auto;
   }
 
   @media (max-width: 768px) {
@@ -62,9 +72,14 @@ nav a {
 }
 
 nav a:hover {
-    color: #00ff9d;
+    color: #cb6ce6;
     transform: scale(1.1);
 }
+
+nav a.active {
+    color: #cb6ce6; /* Matches hover color */
+    font-weight: bold;
+  }
 
 .hero {
     height: 100vh;
@@ -124,6 +139,22 @@ nav a:hover {
     transform: scale(1.05);
     background: rgba(255, 255, 255, 0.2);
 }
+
+@keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .hero-content {
+    animation: fadeIn 1s ease-out;
+  }
+  
 
 /* About Section */
 #about {
@@ -189,7 +220,11 @@ nav a:hover {
 .services .section-title {
     font-size: 3rem;
     margin-bottom: 3rem;
-    color: #cb6ce6;
+    color: transparent; /* Makes the text color transparent */
+    background: linear-gradient(90deg, #004aad, #cb6ce6); /* Adjust the gradient colors */
+    -webkit-background-clip: text; /* Clips the gradient to the text */
+    -webkit-text-fill-color: transparent; /* Ensures the gradient is visible */
+    background-clip: text; /* For non-WebKit browsers */
 }
 
 .services-grid {
@@ -232,7 +267,7 @@ nav a:hover {
 
 .card-content h3 {
     font-size: 1.8rem;
-    color: #cb6ce6;
+    color: #004aad;
     margin-bottom: 1rem;
 }
 
@@ -259,6 +294,11 @@ nav a:hover {
     pointer-events: auto;
     transform: scale(1.05);
 }
+
+.service-card:hover h3 {
+    color: #cb6ce6;
+    transition: color 0.3s ease;
+  }
 
 .contact {
     padding: 6rem 4rem;
@@ -312,7 +352,7 @@ footer {
     background: #0a0a0a;
     text-align: center;
     color: #d4d4d4;
-    border-top: 1px solid #00ff9d;
+    border-top: 1px solid #cb6ce6;
 }
 
 @media (max-width: 1200px) {
