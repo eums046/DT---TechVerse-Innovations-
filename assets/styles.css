@@ -34,10 +34,25 @@ header {
 }
 
 .logo {
-    font-size: 1.5rem;
-    font-weight: 700;
-    color: #ffffff;
-}
+    display: flex;
+    align-items: center;
+  }
+  
+  .logo img {
+    width: 200px; /* Adjust the size as needed */
+    height: auto;
+    object-fit: contain; /* Ensures the image scales proportionally */
+  }
+
+  .logo {
+    margin-right: 20px; /* Adjust as needed */
+  }
+
+  @media (max-width: 768px) {
+    .logo img {
+      width: 80px; /* Smaller size for mobile */
+    }
+  }
 
 nav a {
     color: #ffffff;
