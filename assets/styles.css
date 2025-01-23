@@ -19,6 +19,29 @@ p {
     font-family: "Roboto Flex", sans-serif;
 }
 
+#about p {
+    color: #ffffff; 
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.hero-content {
+    animation: slideIn 1s ease-out;
+}
+
+.service-card {
+    animation: slideIn 1s ease-out;
+}
+
 header {
     position: fixed;
     top: 1.2rem;
@@ -143,7 +166,7 @@ nav a.active {
 
 .cta-button:hover {
     transform: scale(1.05);
-    background: rgba(255, 255, 255, 0.2);
+    background: rgb(200, 23, 206);
 }
 
 @keyframes fadeIn {
@@ -165,7 +188,6 @@ nav a.active {
 /* About Section */
 #about {
     background-color: #1c1c1c; /* Slightly darker background for separation */
-    color: white;
     padding: 50px 20px;
     text-align: center;
 }
@@ -184,10 +206,10 @@ nav a.active {
     padding: 20px;
 }
 
-.about-text h2 {
+#about .about-text h2 {
     font-size: 2.5em;
     margin-bottom: 20px;
-    color: #00ffff; /* Highlighted text color */
+    color: #d000ff !important;
 }
 
 .about-text p {
